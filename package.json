@@ -1,17 +1,24 @@
 {
-  "name": "@freeswap/sdk",
+  "name": "@elephantdefi/sdk",
   "license": "MIT",
-  "version": "0.1.55555",
-  "description": "🛠 An SDK for building applications on top of VenomSwap.",
+  "version": "1.0.2",
+  "description": "🛠 An SDK for building applications on top of the Elephant Project.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/VenomProtocol/venomswap-sdk.git",
+  "repository": "https://github.com/elephantproject/sdk",
   "keywords": [
     "uniswap",
-    "ethereum"
+    "ethereum",
+    "v2",
+    "core",
+    "uniswap-v2",
+    "Elephant",
+    "Elephant Project",
+    "Liquidity Provider",
+    "Harmony"
   ],
   "module": "dist/sdk.esm.js",
   "scripts": {
@@ -22,7 +29,7 @@
     "prepublishOnly": "tsdx build"
   },
   "dependencies": {
-  "@freeswap/core": "0.1.55555",
+  "@elephantdefi/core": "1.0.2",
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "jsbi": "^3.1.5",

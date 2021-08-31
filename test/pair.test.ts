@@ -1,18 +1,90 @@
-import { ChainId, Token, Pair, TokenAmount, WETH, Price } from '../src' 
+import { ChainId, Token, Pair, TokenAmount, WETH, Price } from '../src'
 
 describe('Pair', () => {
   const USDC = new Token(ChainId.MAINNET, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 18, 'USDC', 'USD Coin')
   const DAI = new Token(ChainId.MAINNET, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'DAI Stablecoin')
 
-  const HARMONY_MAINNET_WONE = new Token(ChainId.HARMONY_MAINNET, '0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a', 18, 'WONE', 'Wrapped ONE')
-  const HARMONY_MAINNET_BUSD = new Token(ChainId.HARMONY_MAINNET, '0xE176EBE47d621b984a73036B9DA5d834411ef734', 18, 'BUSD', 'Binance USD')
+  const HARMONY_MAINNET_WONE = new Token(
+    ChainId.HARMONY_MAINNET,
+    '0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a',
+    18,
+    'WONE',
+    'Wrapped ONE'
+  )
+  // const HARMONY_MAINNET_BUSD = new Token(
+  //   ChainId.HARMONY_MAINNET,
+  //   '0xE176EBE47d621b984a73036B9DA5d834411ef734',
+  //   18,
+  //   'BUSD',
+  //   'Binance USD'
+  // )
+  // const HARMONY_MAINNET_LINK = new Token(
+  //   ChainId.HARMONY_MAINNET,
+  //   '0x218532a12a389a4a92fC0C5Fb22901D1c19198aA',
+  //   18,
+  //   '1LINK',
+  //   'ChainLink Token'
+  // )
+  // const HARMONY_MAINNET_WBTC = new Token(
+  //   ChainId.HARMONY_MAINNET,
+  //   '0x3095c7557bCb296ccc6e363DE01b760bA031F2d9',
+  //   18,
+  //   '1WBTC',
+  //   'Wrapped BTC'
+  // )
+  // const HARMONY_MAINNET_VIPER = new Token(
+  //   ChainId.HARMONY_MAINNET,
+  //   '0xEa589E93Ff18b1a1F1e9BaC7EF3E86Ab62addc79',
+  //   18,
+  //   'VIPER',
+  //   'Viper'
+  // )
+  const HARMONY_MAINNET_USDC = new Token(
+    ChainId.HARMONY_MAINNET,
+    '0x985458e523db3d53125813ed68c274899e9dfab4',
+    18,
+    'USDC',
+    'USD Coin'
+  )
 
+  const HARMONY_TESTNET_WONE = new Token(
+    ChainId.HARMONY_TESTNET,
+    '0x7466d7d0C21Fa05F32F5a0Fa27e12bdC06348Ce2',
+    18,
+    'WONE',
+    'Wrapped ONE'
+  )
+  const HARMONY_TESTNET_BUSD = new Token(
+    ChainId.HARMONY_TESTNET,
+    '0x0e80905676226159cc3ff62b1876c907c91f7395',
+    18,
+    'BUSD',
+    'Binance USD'
+  )
+  const HARMONY_TESTNET_VIPER = new Token(
+    ChainId.HARMONY_TESTNET,
+    '0x69a655c56087d927eb05247fb56495a0f19b9f70',
+    18,
+    'VIPER',
+    'Viper'
+  )
+  const HARMONY_TESTNET_LINK = new Token(
+    ChainId.HARMONY_TESTNET,
+    '0x2C6e26B2faD89bc52d043e78E3D980A08af0Ce88',
+    18,
+    '1LINK',
+    'Link'
+  )
+  const HARMONY_TESTNET_WBTC = new Token(
+    ChainId.HARMONY_TESTNET,
+    '0x6c4387C4f570Aa8cAdcaFFc5E73ecb3D0F8Fc593',
+    18,
+    '1WBTC',
+    'Wrapped BTC'
+  )
 
-  const HARMONY_TESTNET_WONE = new Token(ChainId.HARMONY_TESTNET, '0x7466d7d0C21Fa05F32F5a0Fa27e12bdC06348Ce2', 18, 'WONE', 'Wrapped ONE')
-  const HARMONY_TESTNET_BUSD = new Token(ChainId.HARMONY_TESTNET, '0x0e80905676226159cc3ff62b1876c907c91f7395', 18, 'BUSD', 'Binance USD')
   // const HARMONY_TESTNET_1LINK = new Token(ChainId.HARMONY_TESTNET, '0x2C6e26B2faD89bc52d043e78E3D980A08af0Ce88', 18, '1LINK', 'OneChainlink')
 
- 
   describe('constructor', () => {
     it('cannot be used for tokens on different chains', () => {
       expect(() => new Pair(new TokenAmount(USDC, '100'), new TokenAmount(WETH[ChainId.RINKEBY], '100'))).toThrow(
@@ -20,20 +92,47 @@ describe('Pair', () => {
       )
     })
   })
-//mainnet
+  //mainnet
   describe('#getAddress', () => {
     it('returns the correct address for Ethereum Mainnet', () => {
       expect(Pair.getAddress(USDC, DAI)).toEqual('0x96773F77A60E393Da2d11E3409956fA126212648')
     })
-    it('returns the correct address for Harmony Mainnet', () => {
-      expect(Pair.getAddress(HARMONY_MAINNET_WONE, HARMONY_MAINNET_BUSD)).toEqual('0xa7E13036086149B7F4f5A172F46216f329416EaC')
+  })
+  describe('#getAddress', () => {
+    it('returns the correct address for Harmony Testnet', () => {
+      expect(Pair.getAddress(HARMONY_MAINNET_WONE, HARMONY_MAINNET_USDC)).toEqual(
+        '0x10B789960c098D7080B1b7Eb0607428e12aD519b'
+      )
     })
   })
-//testnet
-  describe('#getAddress', () => {
 
+  // describe('#getAddress', () => {
+  //   it('returns the correct address for Harmony Testnet', () => {
+  //     expect(Pair.getAddress(HARMONY_MAINNET_LINK, HARMONY_MAINNET_WONE)).toEqual(
+  //       '0x9cB4bA2731E8E2b34C41d0c70F0565b11d6Fa817'
+  //     )
+  //   })
+  // })
+  //testnet
+  describe('#getAddress', () => {
     it('returns the correct address for Harmony Testnet', () => {
-      expect(Pair.getAddress(HARMONY_TESTNET_WONE, HARMONY_TESTNET_BUSD)).toEqual('0x5bA51A7B9E0bEf5e157598edBB46bE7CAb8d013E')
+      expect(Pair.getAddress(HARMONY_TESTNET_WONE, HARMONY_TESTNET_BUSD)).toEqual(
+        '0x841a9208f6eccf03e39aaA7F9B411622311a1789'
+      )
+    })
+  })
+  describe('#getAddress', () => {
+    it('returns the correct address for Harmony Testnet', () => {
+      expect(Pair.getAddress(HARMONY_TESTNET_VIPER, HARMONY_TESTNET_WBTC)).toEqual(
+        '0xedE371fEB2bDBe60609Da7Ff7a488DC4ff8F6A98'
+      )
+    })
+  })
+  describe('#getAddress', () => {
+    it('returns the correct address for Harmony Testnet', () => {
+      expect(Pair.getAddress(HARMONY_TESTNET_LINK, HARMONY_TESTNET_WONE)).toEqual(
+        '0x196d1E5fDCd5C5ff7Ba2FD672d7CA01D6A67B7Bf'
+      )
     })
   })
 

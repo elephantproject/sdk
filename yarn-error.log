@@ -1,0 +1,101 @@
+Arguments: 
+  /usr/bin/node /usr/bin/yarn
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  16.4.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@elephantproject%2fcore: Not found
+      at Request.params.callback [as _callback] (/usr/lib/node_modules/yarn/lib/cli.js:66992:18)
+      at Request.self.callback (/usr/lib/node_modules/yarn/lib/cli.js:140763:22)
+      at Request.emit (node:events:394:28)
+      at Request.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:141735:10)
+      at Request.emit (node:events:394:28)
+      at IncomingMessage.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:141657:12)
+      at Object.onceWrapper (node:events:513:28)
+      at IncomingMessage.emit (node:events:406:35)
+      at endReadableNT (node:internal/streams/readable:1329:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "@elephantproject/sdk",
+    "license": "MIT",
+    "version": "0.0.1",
+    "description": "🛠 An SDK for building applications on top of the Elephant Project.",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "files": [
+      "dist"
+    ],
+    "repository": "https://github.com/elephantproject/sdk",
+    "keywords": [
+      "uniswap",
+      "ethereum",
+      "v2",
+      "core",
+      "uniswap-v2",
+      "Elephant",
+      "Elephant Project",
+      "Liquidity Provider",
+      "Harmony"
+    ],
+    "module": "dist/sdk.esm.js",
+    "scripts": {
+      "lint": "tsdx lint src test",
+      "build": "tsdx build",
+      "start": "tsdx watch",
+      "test": "tsdx test",
+      "prepublishOnly": "tsdx build"
+    },
+    "dependencies": {
+    "@elephantproject/core": "0.0.1",
+      "big.js": "^5.2.2",
+      "decimal.js-light": "^2.5.0",
+      "jsbi": "^3.1.5",
+      "tiny-invariant": "^1.1.0",
+      "tiny-warning": "^1.0.3",
+      "toformat": "^2.0.0"
+    },
+    "peerDependencies": {
+      "@ethersproject/address": "^5.0.0-beta",
+      "@ethersproject/contracts": "^5.0.0-beta",
+      "@ethersproject/networks": "^5.0.0-beta",
+      "@ethersproject/providers": "^5.0.0-beta",
+      "@ethersproject/solidity": "^5.0.0-beta"
+    },
+    "devDependencies": {
+      "@ethersproject/address": "^5.0.2",
+      "@ethersproject/contracts": "^5.0.2",
+      "@ethersproject/networks": "^5.0.2",
+      "@ethersproject/providers": "^5.0.5",
+      "@ethersproject/solidity": "^5.0.2",
+      "@types/big.js": "^4.0.5",
+      "@types/jest": "^24.0.25",
+      "babel-plugin-transform-jsbi-to-bigint": "^1.3.1",
+      "tsdx": "^0.12.3"
+    },
+    "engines": {
+      "node": ">=10"
+    },
+    "prettier": {
+      "printWidth": 120,
+      "semi": false,
+      "singleQuote": true
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
