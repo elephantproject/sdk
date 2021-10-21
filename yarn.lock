@@ -904,10 +904,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@elephantdefi/core@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@elephantdefi/core/-/core-1.0.2.tgz#aa1db7d9c338b5c19e28ee79d3d146657cf94ccc"
-  integrity sha512-XyyTairaCAH7OL+9/laJyOelZkDNBEdBc72hajIz3exw1uXL9h5WLpEpZDdcS+Rq2gWRh+wvjJ9FtPnynjGzxg==
+"@elephantdefi/core@1.5.6":
+  version "1.5.6"
+  resolved "https://registry.yarnpkg.com/@elephantdefi/core/-/core-1.5.6.tgz#ecdbe32d7442c89583e2d4987507f883c3023812"
+  integrity sha512-GOk37Mrn4+99//7X5sUF1/8gfvKyfZQC3GSgpCzV+j5T+tsaRhNfgV19zN+Ry8ISzPoddtCMyRyeYD/EdP7JRg==
   dependencies:
     "@harmony-js/core" "^0.1.57"
     dotenv "^10.0.0"

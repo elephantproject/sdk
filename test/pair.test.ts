@@ -101,7 +101,7 @@ describe('Pair', () => {
   describe('#getAddress', () => {
     it('returns the correct address for Harmony Testnet', () => {
       expect(Pair.getAddress(HARMONY_MAINNET_WONE, HARMONY_MAINNET_USDC)).toEqual(
-        '0x10B789960c098D7080B1b7Eb0607428e12aD519b'
+        '0x135812fE9Df18b70978Eb05958Ff9Dc74a196083'
       )
     })
   })
