@@ -1,8 +1,8 @@
 {
-  "name": "@elephantdefi/sdk",
+  "name": "elephantdexsdk",
   "license": "MIT",
-  "version": "1.5.8",
-  "description": "🛠 An SDK for building applications on top of the Elephant Project.",
+  "version": "2.0.2",
+  "description": "🛠 An SDK for building applications on top of the Elephant Dex.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -29,7 +29,7 @@
     "prepublishOnly": "tsdx build"
   },
   "dependencies": {
-  "@elephantdefi/core": "1.5.6",
+  "elephantdexcore": "2.0.1",
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "jsbi": "^3.1.5",
