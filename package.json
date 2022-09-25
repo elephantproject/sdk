@@ -1,7 +1,7 @@
 {
   "name": "elephantdexsdk",
   "license": "MIT",
-  "version": "2.0.2",
+  "version": "5.8.5",
   "description": "🛠 An SDK for building applications on top of the Elephant Dex.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -10,15 +10,18 @@
   ],
   "repository": "https://github.com/elephantproject/sdk",
   "keywords": [
-    "uniswap",
-    "ethereum",
-    "v2",
+    "Elephant Dex",
+    "Elephant Swap",
+    "AMM",
+    "Cryptocurrency",
+    "Casino",
+    "Harmony",
+    "Defi",
     "core",
     "uniswap-v2",
-    "Elephant",
     "Elephant Project",
-    "Liquidity Provider",
-    "Harmony"
+    "Decentralized Token Exchange",
+    "Dex"
   ],
   "module": "dist/sdk.esm.js",
   "scripts": {
